@@ -256,10 +256,27 @@ gulp.task('sass', function () {
 	    })))
    		// .pipe(gulpif(!config.dev, csso()))
    		// .pipe(gulpif(!config.dev, csscomb()))
-        .pipe(gulp.dest('_dist'));
+        .pipe(gulp.dest('_dist/assets/styles'));
         // .pipe(gulpif(config.dev, reload({stream:true})));
 });
 
+
+gulp.task('sass:dcoumentation', function () {
+	return sass(config.src.styles.core, {
+    	})
+        .on('error', function (err) {
+            console.error('Error!', err.message);
+        })
+        .pipe(prefix('last 3 version'))
+   		.pipe(gulpif((config.dev && !config.simple), sourcemaps.write('maps', {
+	        includeContent: false,
+	        sourceRoot: '.'
+	    })))
+   		// .pipe(gulpif(!config.dev, csso()))
+   		// .pipe(gulpif(!config.dev, csscomb()))
+        .pipe(gulp.dest('_documentation'));
+        // .pipe(gulpif(config.dev, reload({stream:true})));
+});
 
 
 // fonts
@@ -279,12 +296,12 @@ gulp.task('serve', ['fonts', 'sass'], function() {
 
 	gulp.watch("./src/assets/fonts/**/*", ['fonts']);
 
-    gulp.watch("src/scss/**/*.scss", ['sass']);
-	gulp.watch("dist/**/*.html").on('change', browserSync.reload);
+    gulp.watch("./src/scss/**/*.scss", ['sass']);
+	gulp.watch("_dist/**/*.html").on('change', browserSync.reload);
 
 
-    gulp.watch("src/*.html", ['html']);
-	gulp.watch("dist/*.html").on('change', browserSync.reload);
+    gulp.watch("./src/*.html", ['html']);
+	gulp.watch("_dist/*.html").on('change', browserSync.reload);
 
 });
 
@@ -324,7 +341,8 @@ gulp.task('documentation', function () {
 		'html',
 		'stylemack',
 		'fonts',
-		'colors'
+		'colors',
+		'sass:dcoumentation'
 	];
 
 	// run build
