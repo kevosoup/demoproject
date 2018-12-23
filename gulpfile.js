@@ -292,12 +292,10 @@ gulp.task('serve', ['fonts', 'sass'], function() {
         server: "./_dist"
     });
 
-	gulp.watch("src/**/*", ['stylemack']);
-
 	gulp.watch("./src/assets/fonts/**/*", ['fonts']);
 
     gulp.watch("./src/scss/**/*.scss", ['sass']);
-	gulp.watch("_dist/**/*.html").on('change', browserSync.reload);
+	gulp.watch("_dist/**/*.css").on('change', browserSync.reload);
 
 
     gulp.watch("./src/*.html", ['html']);
