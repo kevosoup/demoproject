@@ -3,11 +3,11 @@
 
 
 // Styles you want to public documentation for
-@import "ui-arch";
-@import "demo";
-@import "website";
+@import "global";
+@import "brand";
+@import "application";
 
-@import "documentation-colors"; // Color documentation (auto generated) 
+@import "documentation-colors"; // Color documentation (auto generated)
 
 /*
 ---
@@ -15,8 +15,8 @@ name: Disable Select
 category: 1. Tools > Mixin
 ---
 
-Removal of selecting an element on the page. 
- 
+Removal of selecting an element on the page.
+
 * `.u-disable-select` - Utility helper
 * `a`, `button`, `label`, `legend` - Default have disable select added if `$includeResets` is `true` (`~/global/00-settings.scss`)
 
@@ -38,7 +38,7 @@ category: 1. Tools > Mixin
 ---
 
 Adds a `clear: both;` as an `:after` pseudo element
- 
+
 
 Usage:
 
