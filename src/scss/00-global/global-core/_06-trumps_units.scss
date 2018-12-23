@@ -1,0 +1,3758 @@
+/*
+---
+name: Space Sections
+category: 6. Trumps > Spacing Units
+---
+
+Space sections next to eachother using `padding`, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-sections`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-sections">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-sections@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-sections@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-sections-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-sections-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-sections-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-sections-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-sections-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+.u-space-sections {
+	@include suffixcate {
+		> * + * {
+			@include units($property: "margin", $variation: (top: true));
+		}
+	}
+
+	&-lg {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "padding", $version: "two-times", $variation: (top: true));
+			}
+		}
+
+		&-fixed {
+			@include suffixcate {
+				> * + * {
+					padding-top: $default-space * 2;
+				}
+			}
+		}
+	}
+
+	&-fixed {
+		@include suffixcate {
+			> * + * {
+				padding-top: $default-space;
+			}
+		}
+	}
+
+	&-sm {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "padding", $version: "half-sized", $variation: (top: true));
+			}
+		}
+	}
+
+	&-tiny {
+		@include suffixcate {
+			> * + * {
+				padding-top: $default-space / 4;
+			}
+		}
+	}
+}
+
+
+/*
+---
+name: Space Sections (Alt)
+category: 6. Trumps > Spacing Units
+---
+
+Space sections next to eachother using `margin`, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-sections`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+```demo.html
+<div class="u-gutt-sections">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-sections@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-sections@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-sections-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+
+<div class="u-gutt-sections-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-sections-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-sections-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-sections-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+.u-gutt-sections {
+	@include suffixcate {
+		> * + * {
+			@include units($property: "margin", $variation: (top: true));
+		}
+	}
+
+	&-lg {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "margin", $version: "two-times", $variation: (top: true));
+			}
+		}
+
+		&-fixed {
+			@include suffixcate {
+				> * + * {
+					margin-top: $default-space * 2;
+				}
+			}
+		}
+	}
+
+	&-fixed {
+		@include suffixcate {
+			> * + * {
+				margin-top: $default-space;
+			}
+		}
+	}
+
+	&-sm {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "margin", $version: "half-sized", $variation: (top: true));
+			}
+		}
+	}
+
+	&-tiny {
+		@include suffixcate {
+			> * + * {
+				margin-top: $default-space / 4;
+			}
+		}
+	}
+}
+
+
+
+/*
+---
+name: Space Children
+category: 6. Trumps > Spacing Units
+---
+
+Space  children with `padding` between them, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-children`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-children">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-children@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-children@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-children-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-children-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-children-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-children-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-children-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+.u-space-children {
+	@include suffixcate {
+		> * + * {
+			@include units($property: "margin", $variation: (left: true));
+		}
+	}
+
+	&-lg {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "padding", $version: "two-times", $variation: (left: true));
+			}
+		}
+
+		&-fixed {
+			@include suffixcate {
+				> * + * {
+					padding-left: $default-space * 2;
+				}
+			}
+		}
+	}
+
+	&-fixed {
+		@include suffixcate {
+			> * + * {
+				padding-left: $default-space;
+			}
+		}
+	}
+
+	&-sm {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "padding", $version: "half-sized", $variation: (left: true));
+			}
+		}
+	}
+
+	&-tiny {
+		@include suffixcate {
+			> * + * {
+				padding-left: $default-space / 4;
+			}
+		}
+	}
+}
+
+/*
+---
+name: Space Children (Alt)
+category: 6. Trumps > Spacing Units
+---
+
+Space  children with `margin` between them, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-children`: Default unit (`$default-space`) above `$bp-gutt` and .5 the default unit (`$default-space` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-gutt` and default unit (`$default-space`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-gutt-children">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-children@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-children@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-children-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-children-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-children-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-children-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-children-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+.u-gutt-children {
+	@include suffixcate {
+		> * + * {
+			@include units($property: "margin", $variation: (left: true));
+		}
+	}
+
+	&-lg {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "margin", $version: "two-times", $variation: (left: true));
+			}
+		}
+
+		&-fixed {
+			@include suffixcate {
+				> * + * {
+					margin-left: $default-space * 2;
+				}
+			}
+		}
+	}
+
+	&-fixed {
+		@include suffixcate {
+			> * + * {
+				margin-left: $default-space;
+			}
+		}
+	}
+
+	&-sm {
+		@include suffixcate {
+			> * + * {
+				@include units($property: "margin", $version: "half-sized", $variation: (left: true));
+			}
+		}
+	}
+
+	&-tiny {
+		@include suffixcate {
+			> * + * {
+				margin-left: $default-space / 4;
+			}
+		}
+	}
+}
+
+
+
+
+// SETTINGS: Global variables, config switches
+// @import "00-settings";
+
+// TOOLS: Default mixin and functions
+// @import "01-tools";
+
+
+/*
+---
+name: Padding
+category: 6. Trumps > Spacing Units
+---
+
+`padding` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Padding > Padding Top
+category: 6. Trumps > Spacing Units
+---
+
+`padding-top` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-1`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-1">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-1@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-1@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-1-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-1-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-1-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-1-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-1-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+/*
+---
+name: Padding > Padding Right
+category: 6. Trumps > Spacing Units
+---
+
+`padding-right` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-2`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-2">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-2@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-2@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-2-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-2-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-2-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-2-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-2-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Padding > Padding Bottom
+category: 6. Trumps > Spacing Units
+---
+
+`padding-bottom` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-3`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-3">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-3@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-3@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-3-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-3-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-3-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-3-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-3-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Padding > Padding Left
+category: 6. Trumps > Spacing Units
+---
+
+`padding-left` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-4`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-4">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-4@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-4@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-4-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-4-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-4-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-4-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-4-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+/*
+---
+name: Padding > Top and Bottom
+category: 6. Trumps > Spacing Units
+---
+
+`padding-top` and `padding-bottom` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-1-3`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-1-3">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-1-3@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-1-3@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-1-3-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-1-3-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-1-3-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-1-3-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-1-3-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Padding > Right and Left
+category: 6. Trumps > Spacing Units
+---
+
+`padding-top` and `padding-bottom` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-space-2-4`: Default unit (`$default-space`) above `$bp-space` and .5 the default unit (`$default-space` * .5) below `$bp-space`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<div class="u-space-2-4">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-space-2-4@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-space-2-4@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-space-2-4-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-space-2-4-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-space-2-4-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-space-2-4-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-space-2-4-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+// padding
+$variations-spacing: (top: 1, right: 2, bottom: 3, left: 4);
+.u-space {
+	@each $version, $number in $variations-spacing {
+		&-#{$number} {
+			@include suffixcate {
+				@include units($variation: (#{$version}: true));
+			}
+
+			&-fixed {
+				@include suffixcate {
+					padding-#{$version}: $default-space;
+				}
+			}
+
+			&-lg {
+				@include suffixcate {
+					@include units($version: "two-times", $variation: (#{$version}: true));
+				}
+			}
+
+			&-lg-fixed {
+				@include suffixcate {
+					padding-#{$version}: $default-space * 2;
+				}
+			}
+
+			&-sm {
+				@include suffixcate {
+					@include units($version: "half-sized", $variation: (#{$version}: true));
+				}
+			}
+
+			&-tiny {
+				@include suffixcate {
+					padding-#{$version}: $default-space / 4;
+				}
+			}
+		}
+	}
+
+	@include suffixcateExtend((".u-space-1"));
+	@include suffixcateExtend((".u-space-2"));
+	@include suffixcateExtend((".u-space-3"));
+	@include suffixcateExtend((".u-space-4"));
+
+	&-1-3 {
+		@include suffixcateExtend((".u-space-1"));
+		@include suffixcateExtend((".u-space-3"));
+
+
+		&-tiny {
+			@include suffixcateExtend((".u-space-1-tiny"));
+			@include suffixcateExtend((".u-space-3-tiny"));
+		}
+
+		&-sm {
+			@include suffixcateExtend((".u-space-1-sm"));
+			@include suffixcateExtend((".u-space-3-sm"));
+		}
+
+		&-fixed {
+			@include suffixcateExtend((".u-space-1-fixed"));
+			@include suffixcateExtend((".u-space-3-fixed"));
+		}
+
+		&-lg {
+			@include suffixcateExtend((".u-space-1-lg"));
+			@include suffixcateExtend((".u-space-3-lg"));
+		}
+
+		&-lg-fixed {
+			@include suffixcateExtend((".u-space-1-lg-fixed"));
+			@include suffixcateExtend((".u-space-3-lg-fixed"));
+		}
+	}
+
+	&-2-4 {
+		@include suffixcateExtend((".u-space-2"));
+		@include suffixcateExtend((".u-space-4"));
+
+
+		&-tiny {
+			@include suffixcateExtend((".u-space-2-tiny"));
+			@include suffixcateExtend((".u-space-4-tiny"));
+		}
+
+		&-sm {
+			@include suffixcateExtend((".u-space-2-sm"));
+			@include suffixcateExtend((".u-space-4-sm"));
+		}
+
+		&-fixed {
+			@include suffixcateExtend((".u-space-2-fixed"));
+			@include suffixcateExtend((".u-space-4-fixed"));
+		}
+
+		&-lg {
+			@include suffixcateExtend((".u-space-2-lg"));
+			@include suffixcateExtend((".u-space-4-lg"));
+		}
+
+		&-lg-fixed {
+			@include suffixcateExtend((".u-space-2-lg-fixed"));
+			@include suffixcateExtend((".u-space-4-lg-fixed"));
+		}
+	}
+
+
+	&-fixed {
+		@include suffixcateExtend((".u-space-1-fixed"));
+		@include suffixcateExtend((".u-space-2-fixed"));
+		@include suffixcateExtend((".u-space-3-fixed"));
+		@include suffixcateExtend((".u-space-4-fixed"));
+	}
+
+	&-lg {
+		@include suffixcateExtend((".u-space-1-lg"));
+		@include suffixcateExtend((".u-space-2-lg"));
+		@include suffixcateExtend((".u-space-3-lg"));
+		@include suffixcateExtend((".u-space-4-lg"));
+	}
+
+	&-lg-fixed {
+		@include suffixcateExtend((".u-space-1-lg-fixed"));
+		@include suffixcateExtend((".u-space-2-lg-fixed"));
+		@include suffixcateExtend((".u-space-3-lg-fixed"));
+		@include suffixcateExtend((".u-space-4-lg-fixed"));
+	}
+
+	&-sm {
+		@include suffixcateExtend((".u-space-1-sm"));
+		@include suffixcateExtend((".u-space-2-sm"));
+		@include suffixcateExtend((".u-space-3-sm"));
+		@include suffixcateExtend((".u-space-4-sm"));
+	}
+
+	&-tiny {
+		@include suffixcateExtend((".u-space-1-tiny"));
+		@include suffixcateExtend((".u-space-2-tiny"));
+		@include suffixcateExtend((".u-space-3-tiny"));
+		@include suffixcateExtend((".u-space-4-tiny"));
+	}
+}
+
+
+
+/*
+---
+name: Margin
+category: 6. Trumps > Spacing Units
+---
+
+`margin` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-gutt">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Margin > Margin Top
+category: 6. Trumps > Spacing Units
+---
+
+`margin-top` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-1`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-gutt-1">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-1@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-1@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-1-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-1-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-1-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-1-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-1-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+/*
+---
+name: Margin > Margin Right
+category: 6. Trumps > Spacing Units
+---
+
+`margin-right` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-2`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-gutt-2">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-2@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-2@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-2-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-2-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-2-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-2-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-2-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Margin > Margin Bottom
+category: 6. Trumps > Spacing Units
+---
+
+`margin-bottom` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-3`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-gutt-3">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-3@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-3@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-3-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-3-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-3-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-3-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-3-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Margin > Margin Left
+category: 6. Trumps > Spacing Units
+---
+
+`margin-left` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-4`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-gutt-4">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-4@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-4@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-4-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-4-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-4-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-4-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-4-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+/*
+---
+name: Margin > Top and Bottom
+category: 6. Trumps > Spacing Units
+---
+
+`margin-top` and `margin-bottom` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-1-3`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-gutt-1-3">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-1-3@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-1-3@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-1-3-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-1-3-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-1-3-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-1-3-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-1-3-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Margin > Right and Left
+category: 6. Trumps > Spacing Units
+---
+
+`margin-top` and `margin-bottom` inside an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-gutt-2-4`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-gutt-2-4">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-gutt-2-4@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-gutt-2-4@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-gutt-2-4-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-gutt-2-4-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-gutt-2-4-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-gutt-2-4-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-gutt-2-4-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+.u-gutt {
+	@each $version, $number in $variations-spacing {
+		&-#{$number} {
+			@include suffixcate {
+				@include units($property: "margin", $variation: (#{$version}: true));
+			}
+
+			&-fixed {
+				@include suffixcate {
+					margin-#{$version}: $default-space;
+				}
+			}
+
+			&-lg {
+				@include suffixcate {
+					@include units($property: "margin", $version: "two-times", $variation: (#{$version}: true));
+				}
+			}
+
+			&-lg-fixed {
+				@include suffixcate {
+					margin-#{$version}: $default-space * 2;
+				}
+			}
+
+			&-sm {
+				@include suffixcate {
+					@include units($property: "margin", $version: "half-sized", $variation: (#{$version}: true));
+				}
+			}
+
+			&-tiny {
+				@include suffixcate {
+					margin-#{$version}: $default-space / 4;
+				}
+			}
+		}
+	}
+
+	@include suffixcateExtend((".u-gutt-1"));
+	@include suffixcateExtend((".u-gutt-2"));
+	@include suffixcateExtend((".u-gutt-3"));
+	@include suffixcateExtend((".u-gutt-4"));
+
+	&-1-3 {
+		@include suffixcateExtend((".u-gutt-1"));
+		@include suffixcateExtend((".u-gutt-3"));
+
+
+		&-tiny {
+			@include suffixcateExtend((".u-gutt-1-tiny"));
+			@include suffixcateExtend((".u-gutt-3-tiny"));
+		}
+
+		&-sm {
+			@include suffixcateExtend((".u-gutt-1-sm"));
+			@include suffixcateExtend((".u-gutt-3-sm"));
+		}
+
+		&-fixed {
+			@include suffixcateExtend((".u-gutt-1-fixed"));
+			@include suffixcateExtend((".u-gutt-3-fixed"));
+		}
+
+		&-lg {
+			@include suffixcateExtend((".u-gutt-1-lg"));
+			@include suffixcateExtend((".u-gutt-3-lg"));
+		}
+
+		&-lg-fixed {
+			@include suffixcateExtend((".u-gutt-1-lg-fixed"));
+			@include suffixcateExtend((".u-gutt-3-lg-fixed"));
+		}
+	}
+
+	&-2-4 {
+		@include suffixcateExtend((".u-gutt-2"));
+		@include suffixcateExtend((".u-gutt-4"));
+
+
+		&-tiny {
+			@include suffixcateExtend((".u-gutt-2-tiny"));
+			@include suffixcateExtend((".u-gutt-4-tiny"));
+		}
+
+		&-sm {
+			@include suffixcateExtend((".u-gutt-2-sm"));
+			@include suffixcateExtend((".u-gutt-4-sm"));
+		}
+
+		&-fixed {
+			@include suffixcateExtend((".u-gutt-2-fixed"));
+			@include suffixcateExtend((".u-gutt-4-fixed"));
+		}
+
+		&-lg {
+			@include suffixcateExtend((".u-gutt-2-lg"));
+			@include suffixcateExtend((".u-gutt-4-lg"));
+		}
+
+		&-lg-fixed {
+			@include suffixcateExtend((".u-gutt-2-lg-fixed"));
+			@include suffixcateExtend((".u-gutt-4-lg-fixed"));
+		}
+	}
+
+	&-fixed {
+		@include suffixcateExtend((".u-gutt-1-fixed"));
+		@include suffixcateExtend((".u-gutt-2-fixed"));
+		@include suffixcateExtend((".u-gutt-3-fixed"));
+		@include suffixcateExtend((".u-gutt-4-fixed"));
+	}
+
+	&-lg {
+		@include suffixcateExtend((".u-gutt-1-lg"));
+		@include suffixcateExtend((".u-gutt-2-lg"));
+		@include suffixcateExtend((".u-gutt-3-lg"));
+		@include suffixcateExtend((".u-gutt-4-lg"));
+	}
+
+	&-lg-fixed {
+		@include suffixcateExtend((".u-gutt-1-lg-fixed"));
+		@include suffixcateExtend((".u-gutt-2-lg-fixed"));
+		@include suffixcateExtend((".u-gutt-3-lg-fixed"));
+		@include suffixcateExtend((".u-gutt-4-lg-fixed"));
+	}
+
+	&-sm {
+		@include suffixcateExtend((".u-gutt-1-sm"));
+		@include suffixcateExtend((".u-gutt-2-sm"));
+		@include suffixcateExtend((".u-gutt-3-sm"));
+		@include suffixcateExtend((".u-gutt-4-sm"));
+	}
+
+	&-tiny {
+		@include suffixcateExtend((".u-gutt-1-tiny"));
+		@include suffixcateExtend((".u-gutt-2-tiny"));
+		@include suffixcateExtend((".u-gutt-3-tiny"));
+		@include suffixcateExtend((".u-gutt-4-tiny"));
+	}
+}
+
+
+/*
+---
+name: Offset
+category: 6. Trumps > Spacing Units
+---
+
+`margin` negative offset of an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-offset`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-offset">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-offset@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-offset@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-offset-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-offset-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-offset-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-offset-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-offset-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Offset > Offset Top
+category: 6. Trumps > Spacing Units
+---
+
+`margin-top` negative offset of an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-offset-1`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-offset-1">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-offset-1@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-offset-1@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-offset-1-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-offset-1-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-offset-1-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-offset-1-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-offset-1-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+/*
+---
+name: Offset > Offset Right
+category: 6. Trumps > Spacing Units
+---
+
+`margin-right` negative offset of an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-offset-2`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-offset-2">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-offset-2@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-offset-2@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-offset-2-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-offset-2-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-offset-2-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-offset-2-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-offset-2-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Offset > Offset Bottom
+category: 6. Trumps > Spacing Units
+---
+
+`margin-bottom` negative offset of an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-offset-3`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-offset-3">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-offset-3@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-offset-3@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-offset-3-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-offset-3-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-offset-3-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-offset-3-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-offset-3-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Offset > Offset Left
+category: 6. Trumps > Spacing Units
+---
+
+`margin-left` negative offset of an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-offset-4`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-offset-4">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-offset-4@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-offset-4@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-offset-4-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-offset-4-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-offset-4-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-offset-4-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-offset-4-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+/*
+---
+name: Offset > Top and Bottom
+category: 6. Trumps > Spacing Units
+---
+
+`margin-top` and `margin-bottom` negative offset of an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-offset-1-3`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-offset-1-3">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-offset-1-3@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-offset-1-3@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-offset-1-3-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-offset-1-3-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-offset-1-3-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-offset-1-3-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-offset-1-3-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+/*
+---
+name: Offset > Right and Left
+category: 6. Trumps > Spacing Units
+---
+
+`margin-top` and `margin-bottom` negative offset of an element, can be applied to all elements
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes) for `Default`, `Fixed`, `Large`, and `Large (fixed)`.
+
+Versions:
+* Default - `.u-offset-2-4`: Default unit (`$default-gutt`) above `$bp-gutt` and .5 the default unit (`$default-gutt` * .5) below `$bp-gutt`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-gutt`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-gutt` * 2) above `$bp-gutt` and default unit (`$default-gutt`) below `$bp-gutt`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-gutt` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-gutt` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-gutt` * .25)
+
+```demo.html
+<div class="u-offset-2-4">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-offset-2-4@small">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-offset-2-4@large">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```fixed.html
+<div class="u-offset-2-4-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimes.html
+<div class="u-offset-2-4-lg">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```twotimesfixed..html
+<div class="u-offset-2-4-lg-fixed">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```half.html
+<div class="u-offset-2-4-sm">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+```tiny.html
+<div class="u-offset-2-4-tiny">
+	<div>
+		•••
+	</div>
+	<div>
+		•••
+	</div>
+</div>
+```
+
+*/
+
+
+.u-offset {
+	@each $version, $number in $variations-spacing {
+		&-#{$number} {
+			@include suffixcate {
+				@include units($property: "margin", $version: "neg", $variation: (#{$version}: true));
+			}
+
+			&-fixed {
+				@include suffixcate {
+					margin-#{$version}: -$default-space;
+				}
+			}
+
+			&-lg {
+				@include suffixcate {
+					@include units($property: "margin", $version: "two-times-neg", $variation: (#{$version}: true));
+				}
+			}
+
+			&-lg-fixed {
+				@include suffixcate {
+					margin-#{$version}: -$default-space * 2;
+				}
+			}
+
+			&-sm {
+				@include suffixcate {
+					@include units($property: "margin", $version: "half-sized-neg", $variation: (#{$version}: true));
+				}
+			}
+
+			&-tiny {
+				@include suffixcate {
+					margin-#{$version}: -$default-space / 4;
+				}
+			}
+		}
+	}
+
+	@include suffixcateExtend((".u-offset-1"));
+	@include suffixcateExtend((".u-offset-2"));
+	@include suffixcateExtend((".u-offset-3"));
+	@include suffixcateExtend((".u-offset-4"));
+
+	&-1-3 {
+		@include suffixcateExtend((".u-offset-1"));
+		@include suffixcateExtend((".u-offset-3"));
+
+
+		&-tiny {
+			@include suffixcateExtend((".u-offset-1-tiny"));
+			@include suffixcateExtend((".u-offset-3-tiny"));
+		}
+
+		&-sm {
+			@include suffixcateExtend((".u-offset-1-sm"));
+			@include suffixcateExtend((".u-offset-3-sm"));
+		}
+
+		&-fixed {
+			@include suffixcateExtend((".u-offset-1-fixed"));
+			@include suffixcateExtend((".u-offset-3-fixed"));
+		}
+
+		&-lg {
+			@include suffixcateExtend((".u-offset-1-lg"));
+			@include suffixcateExtend((".u-offset-3-lg"));
+		}
+
+		&-lg-fixed {
+			@include suffixcateExtend((".u-offset-1-lg-fixed"));
+			@include suffixcateExtend((".u-offset-3-lg-fixed"));
+		}
+	}
+
+	&-2-4 {
+		@include suffixcateExtend((".u-offset-2"));
+		@include suffixcateExtend((".u-offset-4"));
+
+
+		&-tiny {
+			@include suffixcateExtend((".u-offset-2-tiny"));
+			@include suffixcateExtend((".u-offset-4-tiny"));
+		}
+
+		&-sm {
+			@include suffixcateExtend((".u-offset-2-sm"));
+			@include suffixcateExtend((".u-offset-4-sm"));
+		}
+
+		&-fixed {
+			@include suffixcateExtend((".u-offset-2-fixed"));
+			@include suffixcateExtend((".u-offset-4-fixed"));
+		}
+
+		&-lg {
+			@include suffixcateExtend((".u-offset-2-lg"));
+			@include suffixcateExtend((".u-offset-4-lg"));
+		}
+
+		&-lg-fixed {
+			@include suffixcateExtend((".u-offset-2-lg-fixed"));
+			@include suffixcateExtend((".u-offset-4-lg-fixed"));
+		}
+	}
+
+	&-fixed {
+		@include suffixcateExtend((".u-offset-1-fixed"));
+		@include suffixcateExtend((".u-offset-2-fixed"));
+		@include suffixcateExtend((".u-offset-3-fixed"));
+		@include suffixcateExtend((".u-offset-4-fixed"));
+	}
+
+	&-lg {
+		@include suffixcateExtend((".u-offset-1-lg"));
+		@include suffixcateExtend((".u-offset-2-lg"));
+		@include suffixcateExtend((".u-offset-3-lg"));
+		@include suffixcateExtend((".u-offset-4-lg"));
+	}
+
+	&-lg-fixed {
+		@include suffixcateExtend((".u-offset-1-lg-fixed"));
+		@include suffixcateExtend((".u-offset-2-lg-fixed"));
+		@include suffixcateExtend((".u-offset-3-lg-fixed"));
+		@include suffixcateExtend((".u-offset-4-lg-fixed"));
+	}
+
+	&-sm {
+		@include suffixcateExtend((".u-offset-1-sm"));
+		@include suffixcateExtend((".u-offset-2-sm"));
+		@include suffixcateExtend((".u-offset-3-sm"));
+		@include suffixcateExtend((".u-offset-4-sm"));
+	}
+
+	&-tiny {
+		@include suffixcateExtend((".u-offset-1-tiny"));
+		@include suffixcateExtend((".u-offset-2-tiny"));
+		@include suffixcateExtend((".u-offset-3-tiny"));
+		@include suffixcateExtend((".u-offset-4-tiny"));
+	}
+}
+
+
+/*
+---
+name: Space Grid - Padding
+category: 6. Trumps > Spacing Units
+---
+
+The good ole trick of adding space around elements, then offsetting the parent to create grid appearance. Apply this class to a parent element.
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes)
+
+Versions:
+* `.u-grid-between-space`: Default unit (`$default-space`) with children spaced with `padding`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<ul class="u-grid-between-space || u-unlist">
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+</li>
+```
+*/
+
+
+/*
+---
+name: Space Grid - Padding Extended
+category: 6. Trumps > Spacing Units
+---
+
+Add space around children elements and have gutters with the same spacing. Apply this class to a parent element.
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes)
+
+Versions:
+* `.u-grid-space`: Default unit (`$default-space`) with children spaced with `padding`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<ul class="u-grid-space || u-unlist">
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+</li>
+```
+*/
+
+/*
+---
+name: Space Grid - Margin
+category: 6. Trumps > Spacing Units
+---
+
+The good ole trick of adding space around elements, then offsetting the parent to create grid appearance. Apply this class to a parent element.
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes)
+
+Versions:
+* `.u-grid-between-space`: Default unit (`$default-space`) with children spaced with `padding`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<ul class="u-grid-between-gutt || u-unlist">
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+</li>
+```
+*/
+
+
+/*
+---
+name: Space Grid - Margin Extended
+category: 6. Trumps > Spacing Units
+---
+
+Add space around children elements and have gutters with the same spacing. Apply this class to a parent element.
+
+*  Contains [Suffixcate](/#suffixcate) options (`@small` and `@large` suffixes)
+
+Versions:
+* `.u-grid-gutt`: Default unit (`$default-space`) with children spaced with `padding`
+* Fixed - Suffix: `-fixed`: Maintains default unit (`$default-space`)
+* Large - Suffix: `-lg`: 2x the default unit (`$default-space` * 2) above `$bp-space` and default unit (`$default-space`) below `$bp-space`
+* Large (fixed) - Suffix: `-lg-fixed`:  Maintains 2x default unit (`$default-space` * 2)
+* Small - Suffix: `-sm`: .5 the default unit (`$default-space` * .5)
+* Tiny - Suffix: `-tiny`: .25 the default unit (`$default-space` * .25)
+
+```demo.html
+<ul class="u-grid-gutt || u-unlist">
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+	<li class="u-dark-bg">
+		•••
+	</li>
+</li>
+```
+*/
+
+
+.u-grid {
+	&-between {
+		&-space, &-gutt {
+			@media screen and (min-width: $bp-spaces) {
+				@include suffixcate {
+					margin-top: -$default-space;
+					margin-right: -$default-space;
+					margin-left: -$default-space;
+				}
+			}
+
+			@media screen and (max-width: $bp-spaces) {
+				@include suffixcate {
+					margin-top: (-$default-space / 2);
+					margin-right: (-$default-space / 2);
+					margin-left: (-$default-space / 2);
+				}
+			}
+
+			&-tiny {
+				@include suffixcate {
+					margin-top: (-$default-space / 4);
+					margin-right: (-$default-space / 4);
+					margin-left: (-$default-space / 4);
+				}
+			}
+
+			&-sm {
+				@include suffixcate {
+					margin-top: (-$default-space / 2);
+					margin-right: (-$default-space / 2);
+					margin-left: (-$default-space / 2);
+				}
+			}
+
+			&-fixed {
+				@include suffixcate {
+					margin-top: -$default-space;
+					margin-right: -$default-space;
+					margin-left: -$default-space;
+				}
+			}
+
+			&-2x, &-lg {
+				@include suffixcate {
+					@media screen and (min-width: $bp-spaces) {
+						margin-top: (-$default-space * 2);
+						margin-left: (-$default-space * 2);
+						margin-right: (-$default-space * 2);
+					}
+
+					@media screen and (max-width: $bp-spaces) {
+						margin-top: -$default-space;
+						margin-left: -$default-space;
+						margin-right: -$default-space;
+					}
+				}
+			}
+		}
+
+		&-space {
+
+			@include suffixcate {
+				> * {
+					@media screen and (min-width: $bp-spaces) {
+						padding: $default-space;
+					}
+
+					@media screen and (max-width: $bp-spaces) {
+						padding: $default-space / 2;
+					}
+				}
+			}
+
+			&-tiny {
+				@include suffixcate {
+					 > *  {
+						padding: $default-space / 4;
+					}
+				}
+			}
+
+			&-sm {
+				@include suffixcate {
+					 > *  {
+						padding: $default-space / 2;
+					}
+				}
+			}
+
+
+			&-fixed {
+				@include suffixcate {
+					> *  {
+						padding: $default-space;
+					}
+				}
+			}
+
+			&-2x, &-lg {
+				@include suffixcate {
+					> * {
+						@media screen and (min-width: $bp-spaces) {
+							padding: $default-space * 2;
+						}
+
+						@media screen and (max-width: $bp-spaces) {
+							padding: $default-space;
+						}
+					}
+				}
+			}
+		}
+
+		&-gutt {
+
+			@include suffixcate {
+				> * {
+					@media screen and (min-width: $bp-spaces) {
+						margin: $default-space;
+					}
+
+					@media screen and (max-width: $bp-spaces) {
+						margin: $default-space / 2;
+					}
+				}
+			}
+
+			&-tiny {
+				@include suffixcate {
+					 > *  {
+						margin: $default-space / 4;
+					}
+				}
+			}
+
+			&-sm {
+				@include suffixcate {
+					 > *  {
+						margin: $default-space / 2;
+					}
+				}
+			}
+
+
+			&-fixed {
+				@include suffixcate {
+					> *  {
+						margin: $default-space;
+					}
+				}
+			}
+
+			&-2x, &-lg {
+				@include suffixcate {
+					> * {
+						@media screen and (min-width: $bp-spaces) {
+							margin: $default-space * 2;
+						}
+
+						@media screen and (max-width: $bp-spaces) {
+							margin: $default-space;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	&-space {
+		@include suffixcate {
+			> * {
+				@media screen and (min-width: $bp-spaces) {
+					padding: $default-space;
+				}
+
+				@media screen and (max-width: $bp-spaces) {
+					padding: $default-space / 2;
+				}
+			}
+		}
+
+		&-tiny {
+			@include suffixcate {
+				> *  {
+					padding: $default-space / 4;
+				}
+			}
+		}
+
+		&-sm {
+			@include suffixcate {
+				> *  {
+					padding: $default-space / 2;
+				}
+			}
+		}
+
+		&-fixed {
+			@include suffixcate {
+				> *  {
+					padding: $default-space;
+				}
+			}
+		}
+
+		&-2x, &-lg {
+			@include suffixcate {
+				> * {
+					@media screen and (min-width: $bp-spaces) {
+						padding: $default-space * 2;
+					}
+
+					@media screen and (max-width: $bp-spaces) {
+						padding: $default-space;
+					}
+				}
+			}
+		}
+	}
+
+	&-gutt {
+		@include suffixcate {
+			> * {
+				@media screen and (min-width: $bp-spaces) {
+					margin: $default-space;
+				}
+
+				@media screen and (max-width: $bp-spaces) {
+					margin: $default-space / 2;
+				}
+			}
+		}
+
+		&-tiny {
+			@include suffixcate {
+				> *  {
+					margin: $default-space / 4;
+				}
+			}
+		}
+
+		&-sm {
+			@include suffixcate {
+				> *  {
+					margin: $default-space / 2;
+				}
+			}
+		}
+
+		&-fixed {
+			@include suffixcate {
+				> *  {
+					margin: $default-space;
+				}
+			}
+		}
+
+		&-2x, &-lg {
+			@include suffixcate {
+				> * {
+					@media screen and (min-width: $bp-spaces) {
+						margin: $default-space * 2;
+					}
+
+					@media screen and (max-width: $bp-spaces) {
+						margin: $default-space;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,256 @@
+/*
+---
+name: Webfonts
+category: 6. Trumps > Glyphs
+---
+
+Webfonts are can be custom created using [Icomoon](http://icomoon.io/app/). 
+
+Reference to glyphs are found [here](/assets/webfont/demo.html)
+
+Core glyphs are located in `~/assets/fonts/webfont`. Update by uploading the `selection.json` to [Icomoon app](http://icomoon.io/app/).
+
+*/
+
+@font-face {
+	font-family: 'webfont';
+	src:url('/assets/fonts/webfont/fonts/webfont.eot');
+	src:url('/assets/fonts/webfont/fonts/webfont.eot') format('embedded-opentype'),
+		url('/assets/fonts/webfont/fonts/webfont.woff') format('woff'),
+		url('/assets/fonts/webfont/fonts/webfont.ttf') format('truetype'),
+		url('/assets/fonts/webfont/fonts/webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+%glyph-shared {
+	@include suffixcate {
+		@include glyph;
+		white-space: nowrap;
+	}
+}
+
+%glyph-pseudo-shared {
+	@include suffixcate {
+		content: attr(data-icon);
+	}
+}
+
+%glyph-pseudo-no-speak {
+	@include suffixcate {
+		speak: none;
+	}
+}
+
+
+/*
+---
+name: Glyph
+category: 6. Trumps > Glyphs
+---
+
+Utilizing [Webfont](/#webfonts). See additional documentation and examples [here](https://codepen.io/nicetransition/pen/zryoqr?editors=1000)
+
+*  Contains [Suffixcate](/#suffixcate) option.
+
+Versions
+* Default: `.u-glyph` - Replaces character with glyph, add `.u-glyph--no-speak` to prevent readers speaking the character
+* Default Small: `.u-glyph@small` - Replaces character with glyph for small screens
+* Default Large: `.u-glyph@large` - Replaces character with glyph for large screens
+* Before: `.u-glyph-before` - Replaces character with glyph, add `.u-glyph-before--no-speak` to prevent readers speaking the character. Add `data-icon` with a value equal to the character you want to replace with a glyph.
+* Before Small: `.u-glyph-before@small` - Replaces character with glyph for small screens. Add `data-icon` with a value equal to the character you want to replace with a glyph.
+* Before Large: `.u-glyph-before@large` - Replaces character with glyph for large screens. Add `data-icon` with a value equal to the character you want to replace with a glyph.
+* After: `.u-glyph-after` - Replaces character with glyph, add `.u-glyph-after--no-speak` to prevent readers speaking the character. Add `data-icon` with a value equal to the character you want to replace with a glyph.
+* After Small: `.u-glyph-after@small` - Replaces character with glyph for small screens. Add `data-icon` with a value equal to the character you want to replace with a glyph.
+* After Large: `.u-glyph-after@large` - Replaces character with glyph for large screens. Add `data-icon` with a value equal to the character you want to replace with a glyph.
+
+
+```demo.html
+<div class="u-glyph">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```small.html
+<div class="u-glyph@small">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```large.html
+<div class="u-glyph@large">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```before.html
+<div class="u-glyph-before" data-icon="X">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```before-small.html
+<div class="u-glyph-before@small" data-icon="X">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```before-large.html
+<div class="u-glyph-before@large" data-icon="X">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```after.html
+<div class="u-glyph-after" data-icon="X">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```after-small.html
+<div class="u-glyph-after@small" data-icon="X">
+	<div>
+		X
+	</div>
+</div>
+```
+
+```after-large.html
+<div class="u-glyph-after@large" data-icon="X">
+	<div>
+		X
+	</div>
+</div>
+```
+
+*/
+
+.u-glyph {
+	@include suffixcateExtend(('%glyph-shared'));
+
+	&--no-speak {
+		@extend %glyph-pseudo-no-speak;
+	}
+
+	&-before {
+		&[data-icon] {
+			&:before {
+				@extend %glyph-pseudo-shared;
+			}
+		}
+
+		&:before {
+			@extend %glyph-shared;
+		}
+
+		&--no-speak {
+			&:before {
+				@extend %glyph-pseudo-no-speak;
+			}
+		}
+
+		&\@large {
+			&[data-icon] {
+				&:before {
+					@extend %glyph-pseudo-shared\@large !optional;
+				}
+			}
+
+			&:before {
+				@extend %glyph-shared\@large !optional;
+			}
+
+			&--no-speak {
+				&:before {
+					@extend %glyph-pseudo-no-speak\@large !optional;
+				}
+			}
+		}
+
+		&\@small {
+			&[data-icon] {
+				&:before {
+					@extend %glyph-pseudo-shared\@small !optional;
+				}
+			}
+
+			&:before {
+				@extend %glyph-shared\@small !optional;
+			}
+
+			&--no-speak {
+				&:before {
+					@extend %glyph-pseudo-no-speak\@small !optional;
+				}
+			}
+		}
+	}
+
+	&-after {
+		&[data-icon] {
+			&:after {
+				@extend %glyph-pseudo-shared;
+			}
+		}
+
+		&:after {
+			@extend %glyph-shared;
+		}
+
+		&--no-speak {
+			&:after {
+				@extend %glyph-pseudo-no-speak;
+			}
+		}
+
+		&\@large {
+			&[data-icon] {
+				&:after {
+					@extend %glyph-pseudo-shared\@large !optional;
+				}
+			}
+
+			&:after {
+				@extend %glyph-shared\@large !optional;
+			}
+
+			&--no-speak {
+				&:after {
+					@extend %glyph-pseudo-no-speak\@large !optional;
+				}
+			}
+		}
+
+		&\@small {
+			&[data-icon] {
+				&:after {
+					@extend %glyph-pseudo-shared\@small !optional;
+				}
+			}
+
+			&:after {
+				@extend %glyph-shared\@small !optional;
+			}
+
+			&--no-speak {
+				&:after {
+					@extend %glyph-pseudo-no-speak\@small !optional;
+				}
+			}
+		}
+	}
+}

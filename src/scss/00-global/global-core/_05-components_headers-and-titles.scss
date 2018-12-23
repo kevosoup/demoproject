@@ -1,0 +1,52 @@
+/*
+---
+name: Title Core Styles
+category: 5. Component > Typography
+---
+
+Provides better legibility and kerning across browsers. Can be used on any element that has text as content.
+
+```default.html
+<span class="c-title">Text styles</span>
+```
+*/
+
+
+.c-title {
+	@include title-setup;
+}
+
+
+/*
+---
+name: Title Block
+category: 5. Component > Typography
+---
+
+Spacing for title blocks between headers and subheaders
+
+```default.html
+<hgroup class="c-title-block">
+	<h1 class="c-title-block__header">
+		Header
+	</h1>
+	<h2 class="c-title-block__subheader">
+		Subheader
+	</h2>
+</hgroup>
+
+```
+*/
+
+
+.c-title-block {
+	&__header {
+		& + .c-title-block__subheader {
+			margin-top: $default-space / 2;
+		}
+	}
+
+	&__subheader {
+
+	}
+}

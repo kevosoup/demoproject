@@ -1,0 +1,263 @@
+/*
+---
+name: Full Width
+category: 6. Trumps > Extras
+---
+
+Adds `width: 100%` properties with `.u-f-r` class, apply to children with `.u-f-r-children`
+
+Options:
+* `.u-full`: Full width with `width: 100%`
+* `.u-full-max`: Full width with `max-width: 100%`
+* `.u-full-min`: Full width with `min-width: 100%`
+
+*/
+
+.u-full {
+	@include suffixcate {
+		width: 100%;
+	}
+
+	&-max {
+		@include suffixcate {
+			max-width: 100%;
+		}
+	}
+
+	&-min {
+		@include suffixcate {
+			min-width: 100%;
+		}
+	}
+}
+
+img, textarea, span, label, aside, main {
+	&.u-full {
+		display: block;
+
+		&\@large {
+			@media screen and (min-width: $bp-large) {
+				display: block;
+			}
+		}
+
+		&\@small {
+			@media screen and (max-width: $bp-large) {
+				display: block;
+			}
+		}
+	}
+}
+
+
+/*
+---
+name: Round
+category: 6. Trumps > Extras
+---
+
+Adds `border-radius: 50%` making element a circle with `.u-round`
+
+Options:
+
+*  Contains [Suffixcate](/#suffixcate) options
+* `.u-full`: Full width with `width: 100%`
+* `.u-full-max`: Full width with `max-width: 100%`
+* `.u-full-min`: Full width with `min-width: 100%`
+
+*/
+
+.u-round {
+	@include suffixcate {
+		border-radius: 50%;
+		overflow: hidden;
+	}
+}
+
+
+
+/*
+---
+name: Center
+category: 6. Trumps > Extras
+---
+
+Options for `margin-right` and `margin-left` CSS properties being set to `auto` with `.u-center`
+
+*  Contains [Suffixcate](/#suffixcate) options
+
+*/
+
+.u-center {
+	@include suffixcateExtend(('.u-auto-r'));
+	@include suffixcateExtend(('.u-auto-l'));
+}
+
+
+%u-char-glyph {
+	@include glyph;
+}
+
+%u-char-glyph-default {
+	width: rem(40);
+	text-align: center;
+}
+
+/*
+---
+name: Text decoration
+category: 6. Trumps > Extras
+---
+
+Options for `text-decoration` and `margin-left` CSS property
+
+*  Contains [Suffixcate](/#suffixcate) options
+* `.u-td-none`: `text-decoration: none;`
+* `.u-td`: `text-decoration: underline;`
+
+*/
+
+.u-td-none {
+	text-decoration: none;
+}
+
+.u-td {
+	text-decoration: underline;
+}
+
+
+/*
+---
+name: Minimal Click Area
+category: 6. Trumps > Extras
+---
+
+Add minimum "click area" for a call to action for accessibility reasons, apply `.u-min-click` (`min-width` and `min-height` of `40px`)
+
+*/
+
+.u-min-click {
+	min-width: 40px;
+	min-height: 40px;
+}
+
+/*
+---
+name: Disable Select
+category: 6. Trumps > Extras
+---
+
+Remove select ability with `.u-disable-select`
+
+*/
+
+.u-disable-select {
+	@include disable-select;
+}
+
+
+
+/*
+---
+name: Circle
+category: 6. Trumps > Extras
+---
+
+Make element a circle add `.u-circle`
+
+*/
+
+
+.u-circle {
+	@include suffixcate {
+		border-radius: 100%;
+		overflow: hidden;
+	}
+}
+
+
+/*
+---
+name: Order
+category: 6. Trumps > Extras
+---
+
+Requires parent container to have either `display: flex;` or `display: grid;`.
+
+*  Contains [Suffixcate](/#suffixcate) options available for all options and utility versions;
+
+Options:
+* `.u-order-0`: `order: 0;`
+* `.u-order-1`: `order: 1;`
+* `.u-order-1-neg`: `order: -1;`
+* `.u-order-2`: `order: 2;`
+* `.u-order-2-neg`: `order: -2;`
+* `.u-order-3`: `order: 3;`
+* `.u-order-3-neg`: `order: -3;`
+* `.u-order-4`: `order: 4;`
+* `.u-order-4-neg`: `order: -4;`
+* `.u-order-5`: `order: 5;`
+* `.u-order-5-neg`: `order: -5;`
+* `.u-order-6`: `order: 6;`
+* `.u-order-6-neg`: `order: -6;`
+* `.u-order-7`: `order: 7;`
+* `.u-order-7-neg`: `order: -7;`
+* `.u-order-8`: `order: 8;`
+* `.u-order-8-neg`: `order: -8;`
+* `.u-order-9`: `order: 9;`
+* `.u-order-9-neg`: `order: -9`
+* `.u-order-10`: `order: 10;`
+* `.u-order-10-neg`: `order: -10;`
+* `.u-order-11`: `order: 11;`
+* `.u-order-11-neg`: `order: -11;`
+* `.u-order-12`: `order: 12;`
+* `.u-order-12-neg`: `order: -12;`
+
+
+```demo.html
+<div class="o-flex>
+	<div class="u-order-12">
+		1
+	</div>
+	<div class="u-order-2-neg@large">
+		2
+	</div>
+	<div>
+		3
+	</div>
+	<div class="u-order-2@small">
+		4
+	</div>
+</div>
+```
+
+*/
+
+@for $i from 0 through 12 {
+	.u-order-#{$i} {
+		@include suffixcate {
+			order: $i;
+		}
+	}
+
+	@if ($i != 0) {
+		.u-order-#{$i}-neg {
+			@include suffixcate {
+				order: -$i;
+			}
+		}
+
+	}
+}
+
+
+
+@import "06-trumps_extras-positioning";
+@import "06-trumps_extras-heights";
+@import "06-trumps_extras-lists";
+@import "06-trumps_extras-wraps";
+@import "06-trumps_extras-alignment";
+@import "06-trumps_extras-floats";
+@import "06-trumps_extras-borders";
+@import "06-trumps_extras-resets";
+@import "06-trumps_extras-hides";

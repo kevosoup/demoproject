@@ -1,0 +1,78 @@
+/*
+---
+name: Float
+category: 3. Objects > Float
+---
+
+Applies `display: float` to children of the container and container has a `clear` `:after`.
+
+*  Contains [Suffixcate](/#suffixcate) options.
+
+
+Additional options:
+*  Contains [Suffixcate](/#suffixcate) options.
+* `.o-float`: parent class
+* `.o-float__cell`: children class (applied `float: left`)
+* `.o-float__left`: children class that's alternative to `.o-float__cell`
+* `.o-float__right`: children class (applied `float: right`)
+
+
+```demo.html
+<div class="o-float">
+	<div class="float__cell">
+		•••
+	</div>
+	<div class="float__cell">
+		•••
+	</div>
+</div>
+```
+
+Large Suffixcate:
+
+```large.html
+<div class="o-float@large">
+	<div class="o-float@large__cell">
+		•••
+	</div>
+	<div class="o-float@large__left">
+		•••
+	</div>
+	<div class="o-float@large__right">
+		•••
+	</div>
+</div>
+```
+
+
+Small Suffixcate:
+
+```small.html
+<div class="o-float@large">
+	<div class="o-float@small__cell">
+		•••
+	</div>
+	<div class="o-float@small__cell">
+		•••
+	</div>
+</div>
+```
+*/
+
+.o-float {
+	@include suffixcate {
+		&:after {
+			clear: both;
+			display: table;
+			content: "";
+		}
+
+		&__cell, &__left {
+			float: left;
+		}
+
+		&__cell-alt, &__right {
+			float: right;
+		}
+	}
+}

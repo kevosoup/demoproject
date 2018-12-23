@@ -1,0 +1,169 @@
+// SETTINGS: Global variables, config switches
+@import "00-settings";
+
+// TOOLS: Default mixin and functions
+@import "01-tools";
+
+
+/*
+---
+name: Zones > Content Block
+category: 5. Component > Content
+---
+
+A nice container for content
+
+```default.html
+<article class="c-content-block">
+	<header class="c-content-block__header">
+		<h2>
+			Header
+		</h2>
+	</header>
+	<div class="c-content-block__main">
+		<p>
+			content here
+		</p>
+	</div>
+	<footer class="c-content-block__footer">
+		<a href="#">Link</a>
+	</footer>
+</article>
+```
+
+*/
+
+%content-block-spacing-top {
+	padding-top: $default-space / 2;
+}
+
+
+.c-content-block {
+
+	&__header {
+		& + .c-content-block__main {
+			@extend %content-block-spacing-top;
+		}
+	}
+
+	&__main {
+		// font-family: $secondary-font;
+
+		p:not([class*="reset"]) {
+			@include title-setup;
+			line-height: 1.5;
+		}
+
+		& + .c-content-block__main {
+			@extend %content-block-spacing-top;
+		}
+	}
+
+	&__footer {
+		padding-top: $default-space + ($default-space / 2);
+	}
+}
+
+
+/*
+---
+name: List > Link List
+category: 5. Component > Content
+---
+
+A nice structure for a list of links or content blocks
+
+```default.html
+<ul class="c-link-list">
+	<li>
+		<a href="#">Link</a>
+	</li>
+	<li>
+		<a href="#">Link</a>
+	</li>
+	<li>
+		<a href="#">Link</a>
+	</li>
+</ul>
+```
+
+Alternative name:
+
+```default.html
+<ul class="c-list">
+	<li>
+		<a href="#">Link</a>
+	</li>
+	<li>
+		<a href="#">Link</a>
+	</li>
+	<li>
+		<a href="#">Link</a>
+	</li>
+</ul>
+```
+*/
+
+
+.c-list, .c-link-list {
+	@include suffixcate {
+		list-style: none;
+
+		> li {
+			position: relative;
+
+			&:before {
+				content: "\2022";
+				font-size: em(18);
+				position: absolute;
+				left: -1em;
+			}
+
+			& + li {
+				padding-top: $default-space / 4;
+			}
+
+		}
+	}
+}
+
+
+/*
+---
+name: Zones > Section Blocks
+category: 5. Component > Content
+---
+
+Space out sections
+
+```default.html
+<div class="c-section-blocks">
+	<div class="c-section-blocks__section">
+		••• Section here •••
+	</div>
+	<div class="c-section-blocks__section">
+		••• Section here •••
+	</div>
+</div>
+```
+*/
+
+.c-section-blocks {
+	@include suffixcate {
+		&__section {
+			@include units($version: "two-times", $variation: (bottom: true));
+		}
+
+		&__section + &__section {
+			@include units($version: "two-times", $variation: (top: true));
+		}
+	}
+}
+
+
+// COMPONENTS: Designed components
+@import "05-components_intrinsic-ratios";
+@import "05-components_ctas";
+@import "05-components_forms";
+@import "05-components_headers-and-titles";
+@import "05-components_plugins";

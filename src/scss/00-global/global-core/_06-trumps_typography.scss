@@ -1,0 +1,122 @@
+/*
+---
+name: Alignment
+category: 6. Trumps > Typography
+---
+
+Text alignments with `text-align` helper classes
+
+Additional options:
+*  Contains [Suffixcate](/#suffixcate) options.
+
+`.u-a-r`: Right align
+```uar.html
+<p class="u-a-r">
+	Lorem ipsum.
+</p>
+```
+
+`.u-a-c`: Center align
+```uar.html
+<p class="u-a-c">
+	Lorem ipsum.
+</p>
+```
+
+`.u-a-l`: Left align
+```ual.html
+<p class="u-a-l:>
+	Lorem ipsum.
+</p>
+```
+`.u-a-j`: Justifu align
+```uar.html
+<p class="u-a-r">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit debitis quasi nulla praesentium, veniam eius. Laborum beatae quod nihil laboriosam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit debitis quasi nulla praesentium, veniam eius. Laborum beatae quod nihil laboriosam.
+</p>
+```
+
+*/
+
+
+.u-a-l {
+	@include suffixcate {
+		text-align: left;
+	}
+}
+
+.u-a-c {
+	@include suffixcate  {
+		text-align: center;
+	}
+}
+
+.u-a-r {
+	@include suffixcate {
+		text-align: right;
+	}
+}
+.u-a-j {
+	@include suffixcate {
+		text-align: justify;
+	}
+}
+
+/*
+---
+name: Uppercase
+category: 6. Trumps > Typography
+---
+
+Text alignments with `text-transform` helper classes
+
+Additional options:
+*  Contains [Suffixcate](/#suffixcate) options.
+* Variations can be used: `.u-emphasize` or `.u-upper`
+
+`.u-emphasize`: Uppercase
+```demo.html
+<p class="u-emphasize">
+	Lorem ipsum.
+</p>
+```
+
+
+*/
+
+.u-emphasize, .u-upper, .u-uppercase {
+	@include suffixcate {
+		text-transform: uppercase;
+	}
+}
+
+
+.u-capitalize {
+	@include suffixcate {
+		text-transform: capitalize;
+	}
+}
+
+
+/*
+---
+name: Italic
+category: 6. Trumps > Typography
+---
+
+Text alignments with `font-style: italic` helper classes
+
+Additional options:
+*  Contains [Suffixcate](/#suffixcate) options.
+
+`.u-italic`: Uppercase
+```demo.html
+<p class="u-italic">
+	Lorem ipsum.
+</p>
+```
+*/
+
+.u-italic {
+	font-style: italic;
+}

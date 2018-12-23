@@ -1,0 +1,68 @@
+
+/*
+---
+name: Backgrounds
+category: 6. Trumps
+---
+
+Background options for images
+
+* `.u-bg--cover`: `background-size: cover;` with a `background-repeat: no-repeat;`
+* `.u-bg--full`: `background-size: 100% auto;` with a `background-repeat: no-repeat;`
+* `.u-bg--top`: `background-position: top center;`
+* `.u-bg--center`: `background-position: center center`
+* `.u-bg--bottom`: `background-position: bottom center;`
+
+*/
+
+.u-bg {
+	&--cover, &--full, &--top, &--center {
+		background-repeat: no-repeat;
+	}
+
+	&--cover {
+		background-size: cover;
+	}
+
+	&--full {
+		background-size: 100% auto;
+	}
+
+	&--top {
+		background-position: top center;
+	}
+
+	&--center {
+		background-position: center center;
+	}
+
+	&--bottom {
+		background-position: bottom center;
+	}
+}
+
+
+/*
+---
+name: Object Fit
+category: 6. Trumps > Extras
+---
+
+Add `object-fit` with:
+
+* `.u-o-f`, `.u-of-cover`, `u-object-fit-cover`
+
+*/
+
+.u-o-f, .u-of-cover, .u-object-fit-cover {
+	object-fit: cover;
+}
+
+
+.u-of-fill, .u-object-fit-fill {
+	object-fit: fill;
+}
+
+.u-of-contain, .u-object-fit-contain {
+	object-fit: contain;
+}

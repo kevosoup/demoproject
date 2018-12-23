@@ -1,0 +1,92 @@
+// COMPONENTS: Designed components
+
+
+/*
+---
+name: Button Base
+category: 5. Component > Call to Actions
+---
+
+Basic setup of a button, applied to "all buttons". Buttons can be used with `<a>`, `<button>`, and `<input>` elements.
+
+Types of buttons:
+- Default: Standard button
+
+```base.html
+<button class="c-button c-button--base">Base</button>
+```
+*/
+
+
+/*
+---
+name: Button Default
+category: 5. Component > Call to Actions
+---
+
+Default settings for a traditional button - including spacing. Buttons can be used with `<a>`, `<button>`, and `<input>` elements.
+
+Types of buttons:
+- Default: Standard button
+
+```base.html
+<button class="c-button c-button--base">Base</button>
+```
+*/
+
+.c-button {
+	&--base {
+		@include disable-select;
+		@include title-setup;
+	}
+
+
+	&--default {
+		text-align: center;
+
+		display: inline-block;
+
+		> span {
+			display: block;
+			position: relative;
+		}
+	}
+}
+
+a.c-button {
+	text-decoration: none;
+}
+
+
+/*
+---
+name: Click area
+category: 5. Component > Call to Actions
+---
+
+Minimum click area being `40x40`
+
+```base.html
+<button class="c-click-area || u-dis-ib">40x40</button>
+```
+
+*/
+
+.c-anchor {
+	&--default {
+
+	}
+
+	&[class*="u-glyph"] {
+		// @extend %anchor-text-decoration;
+
+		> span {
+			// @extend %anchor-text-decoration-reset;
+		}
+	}
+}
+
+.c-click-area {
+	min-width: rem(40);
+	min-height: rem(40);
+}

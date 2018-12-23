@@ -1,0 +1,59 @@
+/*
+---
+name: Children Inline
+category: 5. Component > Content
+---
+
+Makes list or an `"block`-style " children `inline-block`
+
+*  Contains [Suffixcate](/#suffixcate) option.
+
+```demo.html
+<ul class="o-child-line">
+	<li>
+		•••
+	</li>
+	<li>
+		•••
+	</li>
+</ul>
+
+```
+*/
+
+.o-child-line {
+	@include suffixcate {
+		> * {
+			display: inline-block;
+		}
+	}
+}
+
+/*
+---
+name: List Inline
+category: 5. Component > Content
+---
+
+Removes padding from `<ul>`
+
+*  Contains [Suffixcate](/#suffixcate) option.
+
+```demo.html
+<ul class="o-list">
+	<li>
+		•••
+	</li>
+	<li>
+		•••
+	</li>
+</ul>
+
+```
+*/
+
+.o-list {
+	@include suffixcate {
+		padding-left: 0;
+	}
+}

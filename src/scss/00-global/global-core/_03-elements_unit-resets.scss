@@ -1,0 +1,15 @@
+/*
+---
+name: Spacing > Paragraphs
+category: 3. Elements
+---
+
+Margins are reset if `$includeResets` is `true` in `_00-settings.scss`, spacing of two `<p>` next to eachother get spaced by `$default-space` between
+
+*/
+
+p {
+	& + p {
+		padding-top: $default-space / 2;
+	}
+}

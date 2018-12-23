@@ -1,0 +1,479 @@
+
+@mixin width-size-generator($value: 1, $bp: $bp-large, $type: percent, $width: false) {
+    &-#{$value} {
+        @if ($type==fixed) {
+            @include suffixcate {
+                width: $width / $value;
+            }
+
+            &-alt, &-max {
+                @include suffixcate {
+                    max-width: $width / $value;
+                }
+            }
+
+            &-alt-2, &-min {
+                @include suffixcate {
+                    min-width: $width / $value;
+                }
+            }
+        } @else {
+            @include suffixcate {
+                width: percentage(1 / $value);
+            }
+
+            &-alt, &-max {
+                @include suffixcate {
+                    max-width: percentage(1 / $value);
+                }
+            }
+
+            &-alt-2, &-min {
+                @include suffixcate {
+                    min-width: percentage(1 / $value);
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+---
+name: Make Widths
+category: 1. Tools > Mixin
+---
+
+Generate widths for selectors. See [Trumps > Widths](/#category-trumps > widths) for additional documentation and exmaples.
+
+Default variable definitions as defined in `_01-tools_width-generator.scss`:
+* `selector-name_percent`: "u-percent" - only used if `make-to-100` is `true`
+* `selector-name_fraction`: "u-width";
+* `selector-name_fraction-min`: "u-min-width";
+* `selector-name_fraction-max`: "u-max-width";
+
+Mixin Arguments:
+* `max-num`: Default `12`. Iterates through generating numbers, provides maximum number to loop through.
+* `output-name`: Default `$selector-name_fraction`. Class prefix for width selectors that are "percentage based" and outputs `width`.
+* `include-max`: Default `true`. Outputs all generated numbers, including the maximum number.
+* `output-name-max`: Default `selector-name_fraction-max`. Class prefix for width selectors that are "percentage based" and outputs `max-width`.
+* `include-min`: Default `true`. Outputs all generated numbers, including the minimum number.
+* `output-name-min`: Default `selector-name_fraction-min`. Class prefix for width selectors that are "percentage based" and outputs `min-width`.
+* `make-to-100`: Default `false`. Outputs `width`, `min-width` and `max-width` with values of `1%`-`100%`
+ 
+Usage:
+
+```
+.select-name {
+	@include makeWidths();
+}
+```
+
+*/
+
+
+// Initialize mixin
+@include makeWidths($max-num: 12);
+
+
+
+.u-size {
+    @for $i from 1 through 12 {
+        @include width-size-generator($i, $type: percent);
+
+        &-fixed {
+            @include width-size-generator($i, $type: fixed, $width: $max-width);
+        }
+
+        &-fixed-sm {
+            @include width-size-generator($i, $type: fixed, $width: $bp-large);
+        }
+    }
+
+    &-sm {
+        max-width: 1em;
+        max-height: 1em;
+    }
+
+    &-cta {
+        min-width: rem(40);
+        min-height: rem(40);
+    }
+}
+
+.u-width {
+    &-0 {
+        @include suffixcate {
+            width: rem(40);
+        }
+
+        &-max {
+            @include suffixcate {
+                max-width: rem(40);
+            }
+        }
+
+        &-min {
+            @include suffixcate {
+                min-width: rem(40);
+            }
+        }
+    }
+
+    &-1 {
+        @include suffixcate {
+            width: rem(50);
+        }
+
+        &-max {
+            @include suffixcate {
+                max-width: rem(50);
+            }
+        }
+
+        &-min {
+            @include suffixcate {
+                min-width: rem(50);
+            }
+        }
+    }
+
+    &-2 {
+        @include suffixcate {
+            width: rem(75);
+        }
+
+        &-max {
+            @include suffixcate {
+                max-width: rem(75);
+            }
+        }
+
+        &-min {
+            @include suffixcate {
+                min-width: rem(75);
+            }
+        }
+    }
+
+    &-3 {
+        @include suffixcate {
+            width: rem(100);
+        }
+
+        &-max {
+            @include suffixcate {
+                max-width: rem(100);
+            }
+        }
+
+        &-min {
+            @include suffixcate {
+                min-width: rem(100);
+            }
+        }
+    }
+
+    &-4 {
+        @include suffixcate {
+            width: rem(200);
+        }
+
+        &-max {
+            @include suffixcate {
+                max-width: rem(200);
+            }
+        }
+
+        &-min {
+            @include suffixcate {
+                min-width: rem(200);
+            }
+        }
+    }
+
+    &-5 {
+        @include suffixcate {
+            width: rem(300);
+        }
+
+        &-max {
+            @include suffixcate {
+                max-width: rem(300);
+            }
+        }
+
+        &-min {
+            @include suffixcate {
+                min-width: rem(300);
+            }
+        }
+    }
+
+    &-6 {
+        @include suffixcate {
+            width: rem(420);
+        }
+
+        &-max {
+
+
+
+            @include suffixcate {
+                max-width: rem(420);
+            }
+        }
+
+        &-min {
+            @include suffixcate {
+                min-width: rem(420);
+            }
+        }
+    }
+
+    &-1-alt {
+        @include suffixcateExtend(('.u-width-1-max'));
+    }
+
+    &-2-alt {
+        @include suffixcateExtend(('.u-width-2-max'));
+    }
+
+    &-3-alt {
+        @include suffixcateExtend(('.u-width-3-max'));
+    }
+
+    &-4-alt {
+        @include suffixcateExtend(('.u-width-4-max'));
+    }
+
+    &-5-alt {
+        @include suffixcateExtend(('.u-width-5-max'));
+    }
+
+    &-6-alt {
+        @include suffixcateExtend(('.u-width-6-max'));
+    }
+
+    &-1-alt-2 {
+        @include suffixcateExtend(('.u-width-1-min'));
+    }
+
+    &-2-alt-2 {
+        @include suffixcateExtend(('.u-width-2-min'));
+    }
+
+    &-3-alt-2 {
+        @include suffixcateExtend(('.u-width-3-min'));
+    }
+
+    &-4-alt-2 {
+        @include suffixcateExtend(('.u-width-4-min'));
+    }
+
+    &-5-alt-2 {
+        @include suffixcateExtend(('.u-width-5-min'));
+    }
+
+    &-6-alt-2 {
+        @include suffixcateExtend(('.u-width-6-min'));
+    }
+}
+
+
+/*
+---
+name: Min Width > Percent
+category: 6. Trumps > Widths
+---
+
+Sets the minimum width for an element as a percent.
+
+Two selector variants:
+- `u-min-width-X-of-Y`
+- `u-min-width-X/Y`
+
+Suffixcate variants:
+- `u-min-width-X-of-Y@small`
+- `u-min-width-X/Y@small`
+- `u-min-width-X-of-Y@large`
+- `u-min-width-X/Y@large`
+
+Where "X" is a number between 1-12 and "Y" is a number 1-12. 12 is defined by `$max-num` from `makeWidths()` in `_06-trumps_widths.scss` and generated in `_01-tools_width-generator.scss`.
+
+
+Examples:
+```u-min-width-X-of-Y.html
+<div class="u-min-width-1-of-10">
+    10%
+</div>
+
+<div class="u-min-width-6-of-12">
+    50%
+</div>
+
+<div class="u-min-width-3-of-4">
+    75%
+</div>
+
+<div class="u-min-width-1-of-1">
+    100%
+</div>
+
+```
+
+```u-min-width-XY.html
+<div class="u-min-width-1/10">
+    10%
+</div>
+
+<div class="u-min-width-6/12">
+    50%
+</div>
+
+<div class="u-min-width-3/4">
+    75%
+</div>
+
+<div class="u-min-width-1/1">
+    100%
+</div>
+
+```
+*/
+
+/*
+---
+name: Width > Percent
+category: 6. Trumps > Widths
+---
+
+Sets the  width for an element as a percent.
+
+Two selector variants:
+- `u-max-width-X-of-Y`
+- `u-max-width-X/Y`
+
+Suffixcate variants:
+- `u-max-width-X-of-Y@small`
+- `u-max-width-X/Y@small`
+- `u-max-width-X-of-Y@large`
+- `u-max-width-X/Y@large`
+
+Where "X" is a number between 1-12 and "Y" is a number 1-12. 12 is defined by `$max-num` from `makeWidths()` in `_06-trumps_widths.scss` and generated in `_01-tools_width-generator.scss`.
+
+
+Examples:
+```u-max-width-X-of-Y.html
+<div class="u-width-1-of-10">
+    10%
+</div>
+
+<div class="u-width-6-of-12">
+    50%
+</div>
+
+<div class="u-width-3-of-4">
+    75%
+</div>
+
+<div class="u-width-1-of-1">
+    100%
+</div>
+
+```
+
+```u-min-width-XY.html
+<div class="u-width-1/10">
+    10%
+</div>
+
+<div class="u-width-6/12">
+    50%
+</div>
+
+<div class="u-width-3/4">
+    75%
+</div>
+
+<div class="u-width-1/1">
+    100%
+</div>
+
+```
+*/
+
+
+/*
+---
+name: Max Width > Percent
+category: 6. Trumps > Widths
+---
+
+Sets the maximum width for an element as a percent.
+
+Two selector variants:
+- `u-max-width-X-of-Y`
+- `u-max-width-X/Y`
+
+Suffixcate variants:
+- `u-max-width-X-of-Y@small`
+- `u-max-width-X/Y@small`
+- `u-max-width-X-of-Y@large`
+- `u-max-width-X/Y@large`
+
+Where "X" is a number between 1-12 and "Y" is a number 1-12. 12 is defined by `$max-num` from `makeWidths()` in `_06-trumps_widths.scss` and generated in `_01-tools_width-generator.scss`.
+
+
+Examples:
+```u-max-width-X-of-Y.html
+<div class="u-max-width-1-of-10">
+    10%
+</div>
+
+<div class="u-max-width-6-of-12">
+    50%
+</div>
+
+<div class="u-max-width-3-of-4">
+    75%
+</div>
+
+<div class="u-max-width-1-of-1">
+    100%
+</div>
+
+```
+
+```u-min-width-XY.html
+<div class="u-max-width-1/10">
+    10%
+</div>
+
+<div class="u-max-width-6/12">
+    50%
+</div>
+
+<div class="u-max-width-3/4">
+    75%
+</div>
+
+<div class="u-max-width-1/1">
+    100%
+</div>
+
+```
+*/
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+node_modules/*
+.sass-cache
+.DS_Store
+dist
+package-lock.json
+*.old
+todo.md
+_dist/
+_documentation/
+yarn.lock
