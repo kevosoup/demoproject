@@ -282,6 +282,10 @@ gulp.task('serve', ['fonts', 'sass'], function() {
     gulp.watch("src/scss/**/*.scss", ['sass']);
 	gulp.watch("dist/**/*.html").on('change', browserSync.reload);
 
+
+    gulp.watch("src/*.html", ['html']);
+	gulp.watch("dist/*.html").on('change', browserSync.reload);
+
 });
 
 gulp.task('html',function (){
