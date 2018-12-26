@@ -7,7 +7,7 @@
 	"main": "README.md",
 	"scripts": {
 		"gulp": "gulp",
-		"prestart": "npm install && gulp documentationope",
+		"prestart": "npm install && gulp documentation",
 		"start": "gulp",
 		"ghpage": "rm -rf _dist && npm install && gulp && rm -rf ../gh-pages_ui-arch.io/*.html && cp _dist/* ../gh-pages_ui-arch.io"
 	},

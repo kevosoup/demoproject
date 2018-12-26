@@ -287,7 +287,7 @@ gulp.task('fonts', function() {
 
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['fonts', 'sass'], function() {
+gulp.task('serve', function() {
     browserSync.init({
         server: "./_dist"
     });
@@ -311,26 +311,6 @@ gulp.task('html',function (){
 })
 
 
-// default build task
-gulp.task('default', function () {
-	// define build tasks
-	var tasks = [
-		'html',
-		'fonts',
-		'colors',
-		'sass',
-		'documentation'
-	];
-
-	// run build
-	runSequence(tasks, function () {
-		// if (config.dev) {
-			gulp.start('serve');
-		// }
-	});
-
-});
-
 
 // development build task
 gulp.task('documentation', function () {
@@ -347,6 +327,28 @@ gulp.task('documentation', function () {
 	runSequence(tasks, function () {
 		// if (config.dev) {
 			//gulp.start('serve');
+		// }
+		console.log("Built!");
+	});
+});
+
+
+
+// default build task
+gulp.task('default', function () {
+	// define build tasks
+	var tasks = [
+		'html',
+		'fonts',
+		'colors',
+		'sass',
+		'documentation'
+	];
+
+	// run build
+	runSequence(tasks, function () {
+		// if (config.dev) {
+			gulp.start('serve');
 		// }
 	});
 
