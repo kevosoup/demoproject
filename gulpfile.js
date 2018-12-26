@@ -261,7 +261,7 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('sass:dcoumentation', function () {
+gulp.task('sass:documentation', function () {
 	return sass(config.src.styles.core, {
     	})
         .on('error', function (err) {
@@ -340,7 +340,7 @@ gulp.task('documentation', function () {
 		'stylemack',
 		'fonts',
 		'colors',
-		'sass:dcoumentation'
+		'sass:documentation'
 	];
 
 	// run build

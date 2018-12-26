@@ -29,17 +29,17 @@
 		"npm": ">=2.0.0"
 	},
 	"devDependencies": {
-		"gulp": "3.9.1",
-		"gulp-if": "2.0.2",
+		"browser-sync": "2.26.3",
+		"gulp": "^4.0.0",
+		"gulp-autoprefixer": "4.1.0",
 		"gulp-concat": "2.6.1",
 		"gulp-exec": "3.0.1",
-		"gulp-util": "3.0.8",
-		"run-sequence": "2.2.1",
+		"gulp-if": "2.0.2",
 		"gulp-ruby-sass": "3.0.0",
 		"gulp-sourcemaps": "2.6.4",
-		"gulp-autoprefixer": "4.1.0",
-		"browser-sync": "2.26.3",
-		"gulp-watch": "5.0.0"
+		"gulp-util": "3.0.8",
+		"gulp-watch": "5.0.0",
+		"run-sequence": "2.2.1"
 	},
 	"dependencies": {
 		"stylemack": "git+https://git@github.com/nicetransition/stylemack.git"
